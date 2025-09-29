@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Skool Funnel Playbook - Offer Elevate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Brand Colors */
+        :root {
+            --brand-orange: rgba(240, 157, 34, 0.97);
+            --brand-orange-light: rgba(240, 157, 34, 0.2);
+            --brand-dark: #0a0a0a;
+            --brand-gray: #1a1a1a;
+            --brand-light-gray: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+        }
+
+        .miro-canvas {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--brand-dark);
+        }
+
+        /* Title Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--brand-gray) 0%, var(--brand-dark) 100%);
+            padding: 60px 40px;
+            border-radius: 24px;
+            color: white;
+            margin-bottom: 80px;
+            box-shadow: 0 20px 60px rgba(240, 157, 34, 0.2);
+            border: 2px solid var(--brand-orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-orange) 0%, rgba(240, 157, 34, 0.3) 100%);
+        }
+
+        .hero-section h1 {
+            font-size: clamp(32px, 5vw, 64px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            color: var(--brand-orange);
+        }
+
+        .hero-section .subtitle {
+            font-size: clamp(16px, 2vw, 28px);
+            opacity: 0.95;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: var(--brand-light-gray);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--brand-orange-light);
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            border-color: var(--brand-orange);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--brand-orange);
+        }
+
+        .stat-label {
+            font-size: clamp(14px, 1.5vw, 18px);
+            opacity: 0.9;
+        }
+
+        /* Section Container */
+        .section {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--brand-orange);
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 100%;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--brand-gray);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+            margin-bottom: 32px;
+            border: 2px solid var(--brand-light-gray);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--brand-orange);
+            box-shadow: 0 8px 32px rgba(240, 157, 34, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .card-header {
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .problem-card {
+            background: rgba(255, 68, 68, 0.1);
+            border: 3px solid #ff4444;
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(255, 68, 68, 0.3);
+        }
+
+        .problem-card h3 {
+            color: #ff4444;
+            font-size: clamp(18px, 2.5vw, 24px);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .problem-card h3::before {
+            content: "✗";
+            font-size: 28px;
+        }
+
+        .problem-card p {
+            font-size: clamp(14px, 1.8vw, 18px);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .problem-impact {
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(255, 68, 68, 0.15);
+            border-radius: 8px;
+            font-weight: 600;
+            color: #ff6b6b;
+            font-size: clamp(13px, 1.6vw, 16px);
+        }
+
+        /* Archetype Cards */
+        .archetype-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .archetype-card {
+            background: var(--brand-gray);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .archetype-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(240, 157, 34, 0.3);
+        }
+
+        .archetype-card.archetype-a {
+            border-color: #ff6b6b;
+        }
+
+        .archetype-card.archetype-b {
+            border-color: var(--brand-orange);
+        }
+
+        .archetype-card.archetype-c {
+            border-color: #4caf50;
+        }
+
+        .archetype-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .archetype-label {
+            font-size: clamp(12px, 1.5vw, 16px);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .archetype-a .archetype-label { color: #ff6b6b; }
+        .archetype-b .archetype-label { color: var(--brand-orange); }
+        .archetype-c .archetype-label { color: #4caf50; }
+
+        .archetype-name {
+            font-size: clamp(20px, 2.5vw, 28px);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .archetype-flow {
+            font-size: clamp(14px, 1.8vw, 18px);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .metrics-grid {
+            display: grid;
+            gap: 16px;
+            margin: 32px 0;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px;
+            background: var(--brand-light-gray);
+            border-radius: 12px;
+        }
+
+        .metric-label {
+            font-size: clamp(13px, 1.6vw, 16px);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .cac-display {
+            text-align: center;
+            padding: 28px;
+            background: linear-gradient(135deg, var(--brand-orange) 0%, rgba(240, 157, 34, 0.7) 100%);
+            border-radius: 16px;
+            margin: 24px 0;
+            color: white;
+        }
+
+        .cac-label {
+            font-size: clamp(12px, 1.5vw, 16px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .cac-amount {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 900;
+        }
+
+        .use-when {
+            background: var(--brand-light-gray);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+
+        .use-when h4 {
+            font-size: clamp(15px, 1.8vw, 18px);
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--brand-orange);
+        }
+
+        .use-when ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .use-when li {
+            padding: 8px 0;
+            font-size: clamp(13px, 1.6vw, 16px);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .use-when li::before {
+            content: "→";
+            color: var(--brand-orange);
+            font-weight: 800;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .client-example {
+            background: var(--brand-orange);
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .client-example strong {
+            display: block;
+            font-size: clamp(12px, 1.5vw, 14px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .client-example p {
+            font-size: clamp(15px, 2vw, 20px);
+            font-weight: 700;
+        }
+
+        /* Math Section */
+        .formula-container {
+            background: var(--brand-gray);
+            border: 4px solid var(--brand-orange);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .formula-step {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin: 28px 0;
+            padding: 28px;
+            background: var(--brand-light-gray);
+            border-radius: 16px;
+            flex-wrap: wrap;
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: var(--brand-orange);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(20px, 2.5vw, 28px);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .step-formula {
+            font-size: clamp(16px, 2.2vw, 24px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .step-description {
+            font-size: clamp(14px, 1.8vw, 18px);
+            color: var(--text-secondary);
+        }
+
+        .calculation-example {
+            background: rgba(240, 157, 34, 0.1);
+            padding: 28px;
+            border-radius: 16px;
+            margin-top: 24px;
+            border-left: 6px solid var(--brand-orange);
+        }
+
+        .calculation-example h4 {
+            font-size: clamp(16px, 2vw, 20px);
+            margin-bottom: 16px;
+            color: var(--brand-orange);
+        }
+
+        .calc-line {
+            font-size: clamp(14px, 1.8vw, 18px);
+            font-family: 'Courier New', monospace;
+            padding: 8px 0;
+            color: var(--text-secondary);
+        }
+
+        /* Failure Points Grid */
+        .failure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .failure-card {
+            background: var(--brand-gray);
+            border-radius: 16px;
+            padding: 28px;
+            border: 3px solid #ff4444;
+            transition: all 0.3s ease;
+        }
+
+        .failure-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(255, 68, 68, 0.3);
+        }
+
+        .failure-number {
+            width: 44px;
+            height: 44px;
+            background: #ff4444;
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .failure-title {
+            font-size: clamp(17px, 2.2vw, 22px);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .failure-problem {
+            font-size: clamp(13px, 1.6vw, 16px);
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .fix-section {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid #4caf50;
+        }
+
+        .fix-label {
+            font-size: clamp(11px, 1.4vw, 14px);
+            font-weight: 700;
+            color: #4caf50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .fix-content {
+            font-size: clamp(13px, 1.6vw, 16px);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .lift-badge {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: clamp(11px, 1.4vw, 14px);
+            font-weight: 800;
+        }
+
+        /* Implementation Timeline */
+        .timeline-container {
+            position: relative;
+            padding-top: 40px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--brand-orange) 0%, rgba(240, 157, 34, 0.3) 100%);
+            border-radius: 3px;
+            display: none;
+        }
+
+        .timeline-weeks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .week-card {
+            background: var(--brand-gray);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 3px solid var(--brand-orange);
+            transition: all 0.3s ease;
+        }
+
+        .week-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(240, 157, 34, 0.3);
+        }
+
+        .week-header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .week-number {
+            width: 72px;
+            height: 72px;
+            background: var(--brand-orange);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 800;
+            margin: 0 auto 16px;
+            box-shadow: 0 8px 24px rgba(240, 157, 34, 0.4);
+        }
+
+        .week-title {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 700;
+            color: var(--brand-orange);
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-item {
+            padding: 14px;
+            background: var(--brand-light-gray);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-size: clamp(13px, 1.6vw, 16px);
+            font-weight: 600;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .task-item::before {
+            content: "✓";
+            color: #4caf50;
+            font-size: 18px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* Client Results Showcase */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, var(--brand-orange) 0%, rgba(240, 157, 34, 0.8) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(240, 157, 34, 0.4);
+        }
+
+        .result-card::before {
+            content: """;
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 180px;
+            opacity: 0.1;
+            font-weight: 800;
+        }
+
+        .client-name {
+            font-size: clamp(20px, 2.8vw, 28px);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .client-business {
+            font-size: clamp(14px, 1.8vw, 18px);
+            opacity: 0.9;
+            margin-bottom: 28px;
+        }
+
+        .result-metric {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .result-label {
+            font-size: clamp(11px, 1.4vw, 14px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .result-value {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 900;
+        }
+
+        .client-quote {
+            font-size: clamp(14px, 1.8vw, 18px);
+            line-height: 1.7;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--brand-gray) 0%, var(--brand-dark) 100%);
+            padding: 60px 40px;
+            border-radius: 24px;
+            color: white;
+            text-align: center;
+            margin: 80px 0;
+            border: 3px solid var(--brand-orange);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            color: var(--brand-orange);
+        }
+
+        .cta-section p {
+            font-size: clamp(16px, 2.2vw, 24px);
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--brand-orange);
+            color: white;
+            padding: 20px 48px;
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 800;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 40px rgba(240, 157, 34, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(240, 157, 34, 0.6);
+        }
+
+        .cta-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .benefit-box {
+            background: var(--brand-light-gray);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid var(--brand-orange-light);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-box:hover {
+            border-color: var(--brand-orange);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            font-size: clamp(36px, 4vw, 48px);
+            margin-bottom: 16px;
+        }
+
+        .benefit-title {
+            font-size: clamp(17px, 2.2vw, 22px);
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--brand-orange);
+        }
+
+        .benefit-description {
+            font-size: clamp(13px, 1.6vw, 16px);
+            opacity: 0.9;
+            color: var(--text-secondary);
+        }
+
+        /* Optimization Opportunities */
+        .optimization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .optimization-card {
+            background: var(--brand-gray);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 3px solid #4caf50;
+            transition: all 0.3s ease;
+        }
+
+        .optimization-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(76, 175, 80, 0.3);
+        }
+
+        .optimization-title {
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 800;
+            color: #4caf50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .optimization-title::before {
+            content: "▲";
+            font-size: 28px;
+        }
+
+        .optimization-content {
+            font-size: clamp(14px, 1.8vw, 18px);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .optimization-content ul {
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+
+        .optimization-content li {
+            margin-bottom: 8px;
+        }
+
+        .impact-badge {
+            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            font-weight: 800;
+            display: inline-block;
+        }
+
+        /* Connector Lines */
+        .connector {
+            text-align: center;
+            font-size: clamp(32px, 4vw, 48px);
+            color: var(--brand-orange);
+            margin: 40px 0;
+        }
+
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            .miro-canvas {
+                padding: 20px 12px;
+            }
+
+            .hero-section,
+            .cta-section {
+                padding: 40px 24px;
+            }
+
+            .formula-container {
+                padding: 24px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .timeline-line {
+                display: none;
+            }
+
+            .archetype-container,
+            .failure-grid,
+            .optimization-grid,
+            .results-grid,
+            .timeline-weeks {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1921px) {
+            .miro-canvas {
+                max-width: 1920px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="miro-canvas">
+        
+        <!-- HERO SECTION -->
+        <div class="hero-section">
+            <h1>2026 Skool Funnel Playbook</h1>
+            <div class="subtitle">1000+ Hours Research • $100M+ Ad Spend Managed • Real Client Results</div>
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-number">$100M+</div>
+                    <div class="stat-label">Ad Spend Managed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Ads Launched</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">$750K+</div>
+                    <div class="stat-label">Client Revenue Increased</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Funnels Tested</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 1: THE 2023 PROBLEM -->
+        <div class="section">
+            <h2 class="section-title">The 2023 Problem</h2>
+            <p class="section-subtitle">These outdated patterns are killing your cost per customer and pipeline efficiency</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>VSL Bloat</h3>
+                    <p>30-45 minute VSLs creating drop-off before application. People aren't finishing the video, so they never apply.</p>
+                    <div class="problem-impact">Impact: 40-60% lower watch-to-apply rates</div>
+                </div>
+
+                <div class="problem-card">
+                    <h3>Email-First Nurture</h3>
+                    <p>Email-only follow-up sequences missing mobile-first audiences. Show rates suffering because people don't check email before calls.</p>
+                    <div class="problem-impact">Impact: 20-45% lower show rates vs SMS</div>
+                </div>
+
+                <div class="problem-card">
+                    <h3>Multi-CTA Paralysis</h3>
+                    <p>Landing pages with 5-7 different calls to action creating decision fatigue. Too many options kills conversion.</p>
+                    <div class="problem-impact">Impact: 28-40% lower application rates</div>
+                </div>
+
+                <div class="problem-card">
+                    <h3>Lead Magnet Bloat</h3>
+                    <p>Multi-asset downloads and nested gating reducing quality applicants. Complexity filters out serious buyers.</p>
+                    <div class="problem-impact">Impact: 40-110% drop in application completion</div>
+                </div>
+
+                <div class="problem-card">
+                    <h3>Weak Application Gating</h3>
+                    <p>Fluffy "what are your goals" questions not qualifying properly. Unqualified leads hitting your calendar.</p>
+                    <div class="problem-impact">Impact: Lower close rates, wasted sales time</div>
+                </div>
+
+                <div class="problem-card">
+                    <h3>Slow DM Response</h3>
+                    <p>Treating DMs like customer support with 24-hour response times. Buyers going cold while waiting.</p>
+                    <div class="problem-impact">Impact: 50% lower close rates vs under-10min response</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 60px; background: rgba(240, 157, 34, 0.1); border: 3px solid var(--brand-orange);">
+                <div class="card-header" style="color: var(--brand-orange);">The Result: $4,800+ CAC When It Should Be $700-$1,500</div>
+                <p style="font-size: clamp(16px, 2vw, 20px); color: var(--text-secondary);">Most coaches and course creators are overpaying 3-5x for customers because they're running outdated funnel patterns from 2023.</p>
+            </div>
+        </div>
+
+        <div class="connector">↓</div>
+
+        <!-- SECTION 2: THREE FUNNELS THAT WORK -->
+        <div class="section">
+            <h2 class="section-title">Three Funnels That Actually Work in 2026</h2>
+            <p class="section-subtitle">Each optimized for different business goals: scale velocity vs capital efficiency</p>
+            
+            <div class="archetype-container">
+                
+                <!-- ARCHETYPE A -->
+                <div class="archetype-card archetype-a">
+                    <div class="archetype-header">
+                        <div class="archetype-label">Archetype A</div>
+                        <div class="archetype-name">Scale Velocity Funnel</div>
+                        <div class="archetype-flow">Ads → VSL → Application</div>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-row">
+                            <span class="metric-label">Cost Per Lead</span>
+                            <span class="metric-value">$22</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Booking Rate</span>
+                            <span class="metric-value">4%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">CPBC</span>
+                            <span class="metric-value">$550</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Show Rate</span>
+                            <span class="metric-value">52%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Close Rate</span>
+                            <span class="metric-value">22%</span>
+                        </div>
+                    </div>
+
+                    <div class="cac-display">
+                        <div class="cac-label">Final CAC</div>
+                        <div class="cac-amount">$4,808</div>
+                    </div>
+
+                    <div class="use-when">
+                        <h4>Use When:</h4>
+                        <ul>
+                            <li>Need to scale fast with budget available</li>
+                            <li>Fastest top-funnel injection</li>
+                            <li>Can sustain higher CAC with LTV</li>
+                            <li>Want predictable paid traffic system</li>
+                        </ul>
+                    </div>
+
+                    <div class="client-example">
+                        <strong>Client Example</strong>
+                        <p>Eric: $0 → $200K in 90 days (under $10K ad spend)</p>
+                    </div>
+                </div>
+
+                <!-- ARCHETYPE B -->
+                <div class="archetype-card archetype-b">
+                    <div class="archetype-header">
+                        <div class="archetype-label">Archetype B</div>
+                        <div class="archetype-name">Capital Efficient Funnel</div>
+                        <div class="archetype-flow">Content → DM → Call</div>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-row">
+                            <span class="metric-label">Cost Per Lead</span>
+                            <span class="metric-value">$6</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Booking Rate</span>
+                            <span class="metric-value">12%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Raw CPBC</span>
+                            <span class="metric-value">$50</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Show Rate</span>
+                            <span class="metric-value">65%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Close Rate</span>
+                            <span class="metric-value">33%</span>
+                        </div>
+                    </div>
+
+                    <div class="cac-display">
+                        <div class="cac-label">Final CAC (w/ DM labor)</div>
+                        <div class="cac-amount">$700</div>
+                    </div>
+
+                    <div class="use-when">
+                        <h4>Use When:</h4>
+                        <ul>
+                            <li>Can staff DMs with under-10min response</li>
+                            <li>Want lowest CAC with organic leverage</li>
+                            <li>Have content production capacity</li>
+                            <li>Scales with staffing and creative</li>
+                        </ul>
+                    </div>
+
+                    <div class="client-example">
+                        <strong>Client Example</strong>
+                        <p>Damian: Decreased CPLC to under $100</p>
+                    </div>
+                </div>
+
+                <!-- ARCHETYPE C -->
+                <div class="archetype-card archetype-c">
+                    <div class="archetype-header">
+                        <div class="archetype-label">Archetype C</div>
+                        <div class="archetype-name">Community Conversion Funnel</div>
+                        <div class="archetype-flow">Community → Offer Page → Call</div>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-row">
+                            <span class="metric-label">Cost Per Lead</span>
+                            <span class="metric-value">$10</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Booking Rate</span>
+                            <span class="metric-value">15%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">CPBC</span>
+                            <span class="metric-value">$67</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Show Rate</span>
+                            <span class="metric-value">70%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Close Rate</span>
+                            <span class="metric-value">30%</span>
+                        </div>
+                    </div>
+
+                    <div class="cac-display">
+                        <div class="cac-label">Final CAC</div>
+                        <div class="cac-amount">$317</div>
+                    </div>
+
+                    <div class="use-when">
+                        <h4>Use When:</h4>
+                        <ul>
+                            <li>Have active engaged community</li>
+                            <li>Want absolute lowest CAC</li>
+                            <li>Slower top-funnel injection acceptable</li>
+                            <li>Best for long-term sustainability</li>
+                        </ul>
+                    </div>
+
+                    <div class="client-example">
+                        <strong>Best For</strong>
+                        <p>Established brands with warm audiences</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="connector">↓</div>
+
+        <!-- SECTION 3: THE MATH THAT MATTERS -->
+        <div class="section">
+            <h2 class="section-title">The Math That Matters</h2>
+            <p class="section-subtitle">Four numbers that determine your real customer acquisition cost</p>
+            
+            <div class="formula-container">
+                <div class="formula-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-formula">Cost Per Lead ÷ Booking Rate = CPBC</div>
+                        <div class="step-description">This is your cost per booked call - the first critical metric most people ignore</div>
+                    </div>
+                </div>
+
+                <div class="formula-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-formula">CPBC ÷ Show Rate = Cost Per Show</div>
+                        <div class="step-description">What you actually pay for someone to show up on the call - where SMS crushes email</div>
+                    </div>
+                </div>
+
+                <div class="formula-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-formula">Cost Per Show ÷ Close Rate = CAC</div>
+                        <div class="step-description">Your true customer acquisition cost - the only number that matters for unit economics</div>
+                    </div>
+                </div>
+
+                <div class="calculation-example">
+                    <h4>Example Calculation (Archetype A):</h4>
+                    <div class="calc-line">CPL: $22 ÷ Booking Rate: 4% = <strong>$550 CPBC</strong></div>
+                    <div class="calc-line">CPBC: $550 ÷ Show Rate: 52% = <strong>$1,058 Cost Per Show</strong></div>
+                    <div class="calc-line">Cost Per Show: $1,058 ÷ Close Rate: 22% = <strong>$4,808 CAC</strong></div>
+                </div>
+
+                <div class="calculation-example" style="background: rgba(76, 175, 80, 0.1); border-left-color: #4caf50; margin-top: 32px;">
+                    <h4>Example Calculation (Archetype B):</h4>
+                    <div class="calc-line">CPL: $6 ÷ Booking Rate: 12% = <strong>$50 Raw CPBC</strong></div>
+                    <div class="calc-line">Fully-loaded CPBC (w/ DM labor): <strong>$150</strong></div>
+                    <div class="calc-line">CPBC: $150 ÷ Show Rate: 65% = <strong>$231 Cost Per Show</strong></div>
+                    <div class="calc-line">Cost Per Show: $231 ÷ Close Rate: 33% = <strong>$700 CAC</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="connector">↓</div>
+
+        <!-- SECTION 4: OPTIMIZATION OPPORTUNITIES -->
+        <div class="section">
+            <h2 class="section-title">Where to Optimize for Maximum Impact</h2>
+            <p class="section-subtitle">These three metrics have the highest leverage on your final CAC</p>
+            
+            <div class="optimization-grid">
+                <div class="optimization-card">
+                    <div class="optimization-title">Booking Rate</div>
+                    <div class="optimization-content">
+                        Biggest CAC impact. Improving from 3% to 6% cuts CAC in half with same CPL.
+                        <br><br>
+                        <strong>How to improve:</strong>
+                        <ul>
+                            <li>Shorten VSL to 12-18 minutes</li>
+                            <li>Use ATS-style scored applications</li>
+                            <li>Single-page offers with one CTA</li>
+                            <li>Remove multi-CTA paralysis</li>
+                        </ul>
+                    </div>
+                    <div class="impact-badge">Highest Impact Lever</div>
+                </div>
+
+                <div class="optimization-card">
+                    <div class="optimization-title">Show Rate</div>
+                    <div class="optimization-content">
+                        SMS-first reminders consistently beat email by 20-45%. Mobile-first audiences check texts, not email.
+                        <br><br>
+                        <strong>How to improve:</strong>
+                        <ul>
+                            <li>SMS booking confirmation</li>
+                            <li>24-hour SMS reminder</li>
+                            <li>3-hour SMS reminder</li>
+                            <li>15-minute SMS heads up</li>
+                        </ul>
+                    </div>
+                    <div class="impact-badge">Quick Win: +20-45%</div>
+                </div>
+
+                <div class="optimization-card">
+                    <div class="optimization-title">Close Rate</div>
+                    <div class="optimization-content">
+                        DM velocity (response under 10 minutes) doubles close rates. Fast response = personal attention = trust.
+                        <br><br>
+                        <strong>How to improve:</strong>
+                        <ul>
+                            <li>Staff DMs like sales channel</li>
+                            <li>Response goal under 10 minutes</li>
+                            <li>Use qualification scripts</li>
+                            <li>Track latency metrics</li>
+                        </ul>
+                    </div>
+                    <div class="impact-badge">Game Changer: 2x Close Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="connector">↓</div>
+
+        <!-- SECTION 5: NINE FAILURE POINTS -->
+        <div class="section">
+            <h2 class="section-title">Nine Failure Points Killing Your Pipeline</h2>
+            <p class="section-subtitle">Exact problems I fix when onboarding new agency clients, with expected lifts</p>
+            
+            <div class="failure-grid">
+                
+                <!-- Failure 1 -->
+                <div class="failure-card">
+                    <div class="failure-number">1</div>
+                    <div class="failure-title">Multi-CTA Paralysis</div>
+                    <div class="failure-problem">
+                        Landing pages with 5-7 different calls to action creating decision fatigue. Download this, watch that, book here, join there.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">One primary CTA only. Remove all secondary actions.</div>
+                        <div class="lift-badge">+28% Application Rate</div>
+                    </div>
+                </div>
+
+                <!-- Failure 2 -->
+                <div class="failure-card">
+                    <div class="failure-number">2</div>
+                    <div class="failure-title">VSL Bloat</div>
+                    <div class="failure-problem">
+                        30-45 minute VSLs causing drop-off before application. People lose interest and never finish watching.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">Cut to 12-18 minutes max. Qualification happens in app, not VSL length.</div>
+                        <div class="lift-badge">+34% Watch-to-Apply</div>
+                    </div>
+                </div>
+
+                <!-- Failure 3 -->
+                <div class="failure-card">
+                    <div class="failure-number">3</div>
+                    <div class="failure-title">Weak Application Gating</div>
+                    <div class="failure-problem">
+                        Fluffy questions like "what are your goals?" not qualifying properly. Unqualified leads hitting calendar.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">ATS-style scoring: revenue range, time commitment, budget capacity.</div>
+                        <div class="lift-badge">Better Lead Quality</div>
+                    </div>
+                </div>
+
+                <!-- Failure 4 -->
+                <div class="failure-card">
+                    <div class="failure-number">4</div>
+                    <div class="failure-title">Email-First Nurture</div>
+                    <div class="failure-problem">
+                        Email-only follow-up missing mobile-first audiences. People don't check email before calls.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">SMS-first reminders: booking + 24h + 3h + 15min.</div>
+                        <div class="lift-badge">+20-45% Show Rate</div>
+                    </div>
+                </div>
+
+                <!-- Failure 5 -->
+                <div class="failure-card">
+                    <div class="failure-number">5</div>
+                    <div class="failure-title">Slow DM Response</div>
+                    <div class="failure-problem">
+                        Treating DMs like customer support with 24-hour response times. Buyers going cold while waiting.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">Staff DMs like sales. Response goal under 10 minutes.</div>
+                        <div class="lift-badge">2x Close Rate</div>
+                    </div>
+                </div>
+
+                <!-- Failure 6 -->
+                <div class="failure-card">
+                    <div class="failure-number">6</div>
+                    <div class="failure-title">Generic Proof</div>
+                    <div class="failure-problem">
+                        Vague claims without specific numbers or client results. "We help businesses grow" vs actual data.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">Specific client results: "$0 to $200K in 90 days" with names.</div>
+                        <div class="lift-badge">Higher Trust & Conversion</div>
+                    </div>
+                </div>
+
+                <!-- Failure 7 -->
+                <div class="failure-card">
+                    <div class="failure-number">7</div>
+                    <div class="failure-title">Random Creative Testing</div>
+                    <div class="failure-problem">
+                        No systematic ad testing strategy. Burning $5K+ trying to find winners randomly.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">3 new ads weekly. Systematic hook, proof, objection testing.</div>
+                        <div class="lift-badge">Find Winners Under $500</div>
+                    </div>
+                </div>
+
+                <!-- Failure 8 -->
+                <div class="failure-card">
+                    <div class="failure-number">8</div>
+                    <div class="failure-title">No Lead Scoring</div>
+                    <div class="failure-problem">
+                        Everyone who fills form gets calendar access. Unqualified leads wasting sales time.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">Score applications. Only qualified leads see calendar.</div>
+                        <div class="lift-badge">Better Use of Sales Time</div>
+                    </div>
+                </div>
+
+                <!-- Failure 9 -->
+                <div class="failure-card">
+                    <div class="failure-number">9</div>
+                    <div class="failure-title">Vague Offer Positioning</div>
+                    <div class="failure-problem">
+                        "We help businesses succeed" level positioning. Not specific enough to stand out.
+                    </div>
+                    <div class="fix-section">
+                        <div class="fix-label">The Fix</div>
+                        <div class="fix-content">One clear transformation promise with specific outcome.</div>
+                        <div class="lift-badge">Better Targeting & CPL</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="connector">↓</div>
+
+        <!-- SECTION 6: IMPLEMENTATION TIMELINE -->
+        <div class="section">
+            <h2 class="section-title">Ship-Today Implementation Stack</h2>
+            <p class="section-subtitle">Four-week rollout that doesn't break your existing funnel</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <div class="timeline-weeks">
+                    
+                    <!-- Week 1 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <div class="week-number">1</div>
+                            <div class="week-title">Foundation</div>
+                        </div>
+                        <ul class="task-list">
+                            <li class="task-item">Build one-page offer (single CTA)</li>
+                            <li class="task-item">Create 15-minute VSL script</li>
+                            <li class="task-item">Set up ATS application (6 scored questions)</li>
+                            <li class="task-item">Remove all secondary CTAs</li>
+                        </ul>
+                    </div>
+
+                    <!-- Week 2 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <div class="week-number">2</div>
+                            <div class="week-title">Automation</div>
+                        </div>
+                        <ul class="task-list">
+                            <li class="task-item">Set up SMS provider integration</li>
+                            <li class="task-item">Create 4-message sequence</li>
+                            <li class="task-item">Optimize calendar settings</li>
+                            <li class="task-item">Test show rate improvements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Week 3 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <div class="week-number">3</div>
+                            <div class="week-title">DM System</div>
+                        </div>
+                        <ul class="task-list">
+                            <li class="task-item">Hire/assign DM handler</li>
+                            <li class="task-item">Create qualification scripts</li>
+                            <li class="task-item">Set response time goal (under 10min)</li>
+                            <li class="task-item">Track latency metrics</li>
+                        </ul>
+                    </div>
+
+                    <!-- Week 4 -->
+                    <div class="week-card">
+                        <div class="week-header">
+                            <div class="week-number">4</div>
+                            <div class="week-title">Scale</div>
+                        </div>
+                        <ul class="task-list">
+                            <li class="task-item">Launch creative testing (3 ads/week)</li>
+                            <li class="task-item">Build benchmark dashboard</li>
+                            <li class="task-item">Test different hooks and proof points</li>
+                            <li class="task-item">Optimize based on data</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 60px; background: linear-gradient(135deg, var(--brand-orange) 0%, rgba(240, 157, 34, 0.8) 100%); color: white; border: none;">
+                <div class="card-header" style="color: white;">Results Timeline</div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; margin-top: 24px;">
+                    <div>
+                        <div style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 8px;">7-14 Days</div>
+                        <div style="font-size: clamp(14px, 1.8vw, 18px); opacity: 0.9;">See show rate improvements from SMS</div>
+                    </div>
+                    <div>
+                        <div style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 8px;">30 Days</div>
+                        <div style="font-size: clamp(14px, 1.8vw, 18px); opacity: 0.9;">Close rate doubles with DM velocity</div>
+                    </div>
+                    <div>
+                        <div style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 8px;">60-90 Days</div>
+                        <div style="font-size: clamp(14px, 1.8vw, 18px); opacity: 0.9;">CAC cut in half vs old system</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="connector">↓</div>
+
+        <!-- SECTION 7: CLIENT RESULTS -->
+        <div class="section">
+            <h2 class="section-title">Real Client Results Using This System</h2>
+            <p class="section-subtitle">Actual case studies from Offer Elevate portfolio</p>
+            
+            <div class="results-grid">
+                
+                <!-- Eric -->
+                <div class="result-card">
+                    <div class="client-name">Eric Gutierrez</div>
+                    <div class="client-business">Explosive Ecom Masterclass</div>
+                    <div class="result-metric">
+                        <div class="result-label">Result</div>
+                        <div class="result-value">$0 → $200K in 90 Days</div>
+                    </div>
+                    <div class="result-metric">
+                        <div class="result-label">Ad Spend</div>
+                        <div class="result-value">Under $10K</div>
+                    </div>
+                    <div class="client-quote">
+                        "I started from zero with no experience in info products, and Mark's team gave me complete peace of mind handling all the data tracking, ads management, and technical setup so I could focus purely on content."
+                    </div>
+                </div>
+
+                <!-- Max -->
+                <div class="result-card">
+                    <div class="client-name">Max Arnold</div>
+                    <div class="client-business">E-Cleaning Academy</div>
+                    <div class="result-metric">
+                        <div class="result-label">Result</div>
+                        <div class="result-value">$0 → $50K MRR in 70 Days</div>
+                    </div>
+                    <div class="result-metric">
+                        <div class="result-label">30-Day Mark</div>
+                        <div class="result-value">$30K MRR</div>
+                    </div>
+                    <div class="client-quote">
+                        "Offer Elevate absolutely made my life so much easier - Mark hired and trained my sales team, ran all my ads, and told me exactly what I needed to do."
+                    </div>
+                </div>
+
+                <!-- Matheus -->
+                <div class="result-card">
+                    <div class="client-name">Matheus Querioz</div>
+                    <div class="client-business">Wolves Den Jiu Jitsu</div>
+                    <div class="result-metric">
+                        <div class="result-label">Result</div>
+                        <div class="result-value">7x ROAS in 30 Days</div>
+                    </div>
+                    <div class="result-metric">
+                        <div class="result-label">Previous Best</div>
+                        <div class="result-value">Never Achieved Before</div>
+                    </div>
+                    <div class="client-quote">
+                        "Ever since we started working with Mark, we got a 7x ROAS - something we had never achieved before. If you value where your money goes and want to work with good people, give them a shot."
+                    </div>
+                </div>
+
+                <!-- Sara -->
+                <div class="result-card">
+                    <div class="client-name">Sara Brewer</div>
+                    <div class="client-business">Center For Overcoming Pornography</div>
+                    <div class="result-metric">
+                        <div class="result-label">Result</div>
+                        <div class="result-value">30% Revenue Increase</div>
+                    </div>
+                    <div class="result-metric">
+                        <div class="result-label">Timeline</div>
+                        <div class="result-value">60 Days</div>
+                    </div>
+                    <div class="client-quote">
+                        "Working with this team has been a game-changer - they gave us real-time data tracking we'd been trying to implement for years and built a sales funnel that connects so much more deeply with our clients."
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="connector">↓</div>
+
+        <!-- FINAL CTA SECTION -->
+        <div class="cta-section">
+            <h2>Book Your Free Audit Call</h2>
+            <p>Let me analyze your current funnel and show you exactly which archetype to run, where your pipeline is leaking money, and the specific changes that will cut your CAC in half.</p>
+            
+            <a href="https://calendly.com/offerelevate" class="cta-button">Book Your Audit Now →</a>
+
+            <div class="cta-benefits">
+                <div class="benefit-box">
+                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-title">Full Funnel Analysis</div>
+                    <div class="benefit-description">I'll walk through your numbers and calculate your real CAC</div>
+                </div>
+                <div class="benefit-box">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Archetype Selection</div>
+                    <div class="benefit-description">Find out which of the 3 funnels fits your business goals</div>
+                </div>
+                <div class="benefit-box">
+                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-title">Quick Win Roadmap</div>
+                    <div class="benefit-description">Leave with specific changes you can ship this week</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px; padding-top: 40px; border-top: 2px solid rgba(240, 157, 34, 0.3);">
+                <p style="font-size: clamp(14px, 1.8vw, 18px); opacity: 0.9; max-width: 700px; margin: 0 auto;">
+                    <strong style="color: var(--brand-orange);">Offer Elevate</strong> • $100M+ Ad Spend Managed • Pay-Per-Performance Agency<br>
+                    Working exclusively with high-ticket coaches and course creators above $20K/month
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
